@@ -7,22 +7,18 @@ namespace HashTableProgram
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome HashTable Program");
-            HashMapNode<int, string> hashkv = new HashMapNode<int, string>(6);
-            hashkv.Add(0, "To");
-            hashkv.Add(1, "be");
-            hashkv.Add(2, "or");
-            hashkv.Add(3, "not");
-            hashkv.Add(4, "to");
-            hashkv.Add(5, "be");          
 
-            string value1 = hashkv.Get(5);
-            Console.WriteLine("5th Position Value is : "+value1);
-           
-            string value2 = hashkv.Get(3);
-            Console.WriteLine("3rd Position Value is : " + value2);
+            int keycount = 0;
+            string Para = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+            string[] Words = Para.Split(" ");
 
-            string value3 = hashkv.Get(0);
-            Console.WriteLine("0th Position Value is : " + value3);
+            HashMapNode<int, string> hashkv = new HashMapNode<int, string>(Words.Length);
+
+            foreach(string i in Words)
+            {
+                hashkv.Add(keycount, i);
+                keycount++;
+            }           
             hashkv.Print();
 
         }
