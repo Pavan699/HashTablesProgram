@@ -57,5 +57,15 @@ namespace HashTableProgram
             HashKeyValue<K, V> item = new HashKeyValue<K, V> { Key = key, Value = value };
             hashkeyvalue.AddLast(item);
         }
+        public void Print()
+        {
+            foreach (LinkedList<HashKeyValue<K, V>> i in items)
+            {
+                foreach (HashKeyValue<K, V> item in i)
+                {
+                    Console.WriteLine(item.Key + " : " + item.Value);
+                }
+            }
+        }
     }
 }

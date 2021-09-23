@@ -7,7 +7,7 @@ namespace HashTableProgram
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome HashTable Program");
-            HashMapNode<int, string> hashkv = new HashMapNode<int, string>(3);
+            HashMapNode<int, string> hashkv = new HashMapNode<int, string>(6);
             hashkv.Add(0, "To");
             hashkv.Add(1, "be");
             hashkv.Add(2, "or");
@@ -23,7 +23,8 @@ namespace HashTableProgram
 
             string value3 = hashkv.Get(0);
             Console.WriteLine("0th Position Value is : " + value3);
-            
+            hashkv.Print();
+
         }
     }
 }
