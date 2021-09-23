@@ -13,16 +13,17 @@ namespace HashTableProgram
             string[] Words = Para.Split(" ");
 
             HashMapNode<int, string> hashkv = new HashMapNode<int, string>(Words.Length);
-
             foreach(string i in Words)
             {
                 hashkv.Add(keycount, i);
                 keycount++;
             }           
             hashkv.Print();
-
+            
             hashkv.Remove(17);
-           
+
+            string value = hashkv.Get(5);
+            Console.WriteLine("5th position Value is : " + value);
         }
     }
 }
