@@ -67,5 +67,26 @@ namespace HashTableProgram
                 }
             }
         }
+
+        public void Remove(K key)
+        {
+            int position = GetArrayIndex(key);
+            LinkedList<HashKeyValue<K, V>> hashkeyvalue = GetLL(position);
+            bool check = false;
+            HashKeyValue<K, V> tempitem = default(HashKeyValue<K, V>);
+            foreach (HashKeyValue<K, V> item in hashkeyvalue)
+            {
+                if (item.Key.Equals(key))
+                {
+                    check = true;
+                    tempitem = item;
+                }
+            }
+            if (check)
+            {
+                hashkeyvalue.Remove(tempitem);
+                Console.WriteLine("Removed {0} position. Value is : {1}", key, tempitem.Value);
+            }
+        }
     }
 }

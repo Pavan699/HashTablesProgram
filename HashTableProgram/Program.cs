@@ -21,6 +21,8 @@ namespace HashTableProgram
             }           
             hashkv.Print();
 
+            hashkv.Remove(17);
+           
         }
     }
 }
