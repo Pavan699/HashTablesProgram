@@ -45,25 +45,7 @@ namespace HashTableProgram
                 items[index] = llist;
             }
             return llist;
-        }
-        /// <summary>
-        /// Get() to get the value
-        /// </summary>
-        /// <param name="key">to check the key is present or not,if present return the value</param>
-        /// <returns>value</returns>
-        public V Get(K key)
-        {
-            int position = GetArrayIndex(key);
-            LinkedList<HashKeyValue<K, V>> hashkeyvalue = GetLL(position);
-            foreach(HashKeyValue<K, V> item in hashkeyvalue)
-            {
-                if(item.Key.Equals(key))
-                {
-                    return item.Value;
-                }
-            }
-            return default(V);
-        }
+        }      
         /// <summary>
         /// Add() method to add the key-value
         /// </summary>
@@ -75,6 +57,24 @@ namespace HashTableProgram
             LinkedList<HashKeyValue<K, V>> hashkeyvalue = GetLL(position);
             HashKeyValue<K, V> item = new HashKeyValue<K, V> { Key = key, Value = value };
             hashkeyvalue.AddLast(item);
+        }
+        /// <summary>
+        /// Get() to get the value
+        /// </summary>
+        /// <param name="key">to check the key is present or not,if present return the value</param>
+        /// <returns>value</returns>
+        public V Get(K key)
+        {
+            int position = GetArrayIndex(key);
+            LinkedList<HashKeyValue<K, V>> hashkeyvalue = GetLL(position);
+            foreach (HashKeyValue<K, V> item in hashkeyvalue)
+            {
+                if (item.Key.Equals(key))
+                {
+                    return item.Value;
+                }
+            }
+            return default(V);
         }
         /// <summary>
         /// Print() method to print the keys and it's values
